@@ -1,0 +1,165 @@
+:root {
+    --couleur-fond:      #0c0101; /* Noir profond pour le fond */
+    --couleur-principale:#E63946; /* Rouge vif — couleur principale */
+    --couleur-texte:     #F1F1F1; /* Blanc cassé pour le texte */
+    --couleur-gris:      #A0A0A0; /* Gris pour les textes secondaires */
+    --couleur-carte:     #1A1A1A; /* Noir légèrement plus clair pour les cartes */
+    --police-titre:      'Georgia', serif;   /* Police pour les titres */
+    --police-texte:      'Arial', sans-serif;/* Police pour
+}
+
+*{
+  margin: 0;        /* Supprime les marges automatiques */
+  padding: 0;       /* Supprime les espacements automatiques */
+  box-sizing: border-box; /* Les bordures sont incluses dans la taille */
+}
+
+body {
+  background-color: var(--couleur-fond);   /* Fond noir */
+  color: var(--couleur-texte);             /* Texte blanc par défaut */
+  font-family: var(--police-texte);        /* Police par défaut */
+  line-height: 1.7; /* Espacement entre les lignes pour la lisibilité */
+}
+nav {
+  display: flex;              /* Flexbox : aligne les éléments en ligne */
+  justify-content: space-between; /* Logo à gauche, liens à droite */
+  align-items: center;        /* Centre verticalement */
+  padding: 20px 60px;         /* Espacement intérieur */
+  background-color: #000;     /* Fond noir pour la nav */
+  border-bottom: 1px solid var(--couleur-principale); /* Ligne rouge en bas */
+  position: sticky; /* La nav reste collée en haut quand on défile */
+  top: 0;
+  z-index: 100; /* Reste au dessus de tous les autres éléments */
+}
+
+.nav-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--couleur-texte);
+}
+
+/* Le <span> dans le logo prend la couleur rouge */
+.nav-logo span {
+  color: var(--couleur-principale);
+}
+
+/* On supprime les puces de la liste <ul> */
+.nav-liens {
+  list-style: none;
+  display: flex;    /* Les liens s'affichent en ligne */
+  gap: 40px;        /* Espace entre chaque lien */
+}
+
+.nav-liens a {
+  color: var(--couleur-gris);
+  text-decoration: none; /* Supprime le soulignement des liens */
+  font-size: 0.95rem;
+  transition: color 0.3s; /* Animation douce au survol */
+}
+
+/* Quand la souris passe sur un lien */
+.nav-liens a:hover {
+  color: var(--couleur-texte);
+}
+
+/* Le lien de la page actuelle est en rouge */
+.nav-liens a.actif {
+  color: var(--couleur-principale);
+  font-weight: bold;
+}
+
+
+/* =============================================
+   LA SECTION HERO
+   ============================================= */
+.hero {
+  min-height: 90vh; /* Prend au minimum 90% de la hauteur de l'écran */
+  display: flex;
+  flex-direction: column;  /* Les éléments s'empilent verticalement */
+  justify-content: center; /* Centré verticalement */
+  padding: 0 60px;         /* Espacement sur les côtés */
+}
+
+.hero-bonjour {
+  font-family: var(--police-texte);
+  font-size: 1.1rem;
+  color: var(--couleur-gris);
+  margin-bottom: 10px;
+}
+
+.hero-nom {
+  font-family: var(--police-titre);
+  font-size: 4rem;      /* Très grand pour être impactant */
+  color: var(--couleur-texte);
+  margin-bottom: 10px;
+  line-height: 1.1;
+}
+
+.hero-metier {
+  font-size: 1.8rem;
+  color: var(--couleur-principale); /* En rouge */
+  margin-bottom: 20px;
+  font-weight: normal;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  color: var(--couleur-gris);
+  max-width: 550px; /* Limite la largeur pour rester lisible */
+  margin-bottom: 40px;
+}
+
+/* Conteneur des boutons */
+.hero-boutons {
+  display: flex;
+  gap: 20px; /* Espace entre les deux boutons */
+}
+
+/* Style commun aux deux boutons */
+.btn {
+  padding: 14px 32px;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s; /* Animation douce au survol */
+  cursor: pointer;
+}
+
+/* Bouton principal : fond rouge */
+.btn-principal {
+  background-color: var(--couleur-principale);
+  color: #fff;
+  border: 2px solid var(--couleur-principale);
+}
+
+.btn-principal:hover {
+  background-color: transparent; /* Fond transparent au survol */
+  color: var(--couleur-principale);
+}
+
+/* Bouton secondaire : transparent avec bordure */
+.btn-secondaire {
+  background-color: transparent;
+  color: var(--couleur-texte);
+  border: 2px solid #444;
+}
+
+.btn-secondaire:hover {
+  border-color: var(--couleur-principale);
+  color: var(--couleur-principale);
+}
+
+
+/* =============================================
+   LE FOOTER
+   ============================================= */
+footer {
+  text-align: center;  /* Texte centré */
+  padding: 30px;
+  color: var(--couleur-gris);
+  font-size: 0.85rem;
+  border-top: 1px solid #1f1f1f; /* Ligne de séparation subtile */
+}
+   
+
