@@ -1,177 +1,86 @@
+﻿/* Variables CSS pour définir les couleurs et polices du site */
 :root {
-    --couleur-fond:      #0c0101; /* Noir profond pour le fond */
-    --couleur-principale:#E63946; /* Rouge vif — couleur principale */
-    --couleur-texte:     #F1F1F1; /* Blanc cassé pour le texte */
-    --couleur-gris:      #A0A0A0; /* Gris pour les textes secondaires */
-    --couleur-carte:     #1A1A1A; /* Noir légèrement plus clair pour les cartes */
-    --police-titre:      'Georgia', serif;   /* Police pour les titres */
-    --police-texte:      'Arial', sans-serif;/* Police pour
+  --couleur-fond:      #0c0101;
+  --couleur-principale:#E63946;
+  --couleur-texte:     #F1F1F1;
+  --couleur-gris:      #A0A0A0;
+  --couleur-carte:     #1A1A1A;
+  --police-titre:      'Georgia', serif;
+  --police-texte:      'Arial', sans-serif;
 }
 
-*{
-  margin: 0;        /* Supprime les marges automatiques */
-  padding: 0;       /* Supprime les espacements automatiques */
-  box-sizing: border-box; /* Les bordures sont incluses dans la taille */
+/* Reset des marges et padding pour tous les éléments */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+/* Styles de base pour le corps de la page */
 body {
-  background-color: var(--couleur-fond);   /* Fond noir */
-  color: var(--couleur-texte);             /* Texte blanc par défaut */
-  font-family: var(--police-texte);        /* Police par défaut */
-  line-height: 1.7; /* Espacement entre les lignes pour la lisibilité */
-}
-nav {
-  display: flex;              /* Flexbox : aligne les éléments en ligne */
-  justify-content: space-between; /* Logo à gauche, liens à droite */
-  align-items: center;        /* Centre verticalement */
-  padding: 20px 60px;         /* Espacement intérieur */
-  background-color: #000;     /* Fond noir pour la nav */
-  border-bottom: 1px solid var(--couleur-principale); /* Ligne rouge en bas */
-  position: sticky; /* La nav reste collée en haut quand on défile */
-  top: 0;
-  z-index: 100; /* Reste au dessus de tous les autres éléments */
+  background-color: var(--couleur-fond);
+  color: var(--couleur-texte);
+  font-family: var(--police-texte);
+  line-height: 1.7;
 }
 
+/* Styles pour la barre de navigation */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background-color: #000;
+  border-bottom: 1px solid var(--couleur-principale);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Styles pour le logo de navigation */
 .nav-logo {
   font-size: 1.5rem;
   font-weight: bold;
   color: var(--couleur-texte);
 }
 
-/* Le <span> dans le logo prend la couleur rouge */
 .nav-logo span {
   color: var(--couleur-principale);
 }
 
-/* On supprime les puces de la liste <ul> */
+/* Styles pour la liste des liens de navigation */
 .nav-liens {
   list-style: none;
-  display: flex;    /* Les liens s'affichent en ligne */
-  gap: 40px;        /* Espace entre chaque lien */
+  display: flex;
+  gap: 40px;
 }
 
 .nav-liens a {
   color: var(--couleur-gris);
-  text-decoration: none; /* Supprime le soulignement des liens */
+  text-decoration: none;
   font-size: 0.95rem;
-  transition: color 0.3s; /* Animation douce au survol */
+  transition: color 0.3s;
 }
 
-/* Quand la souris passe sur un lien */
 .nav-liens a:hover {
   color: var(--couleur-texte);
 }
 
-/* Le lien de la page actuelle est en rouge */
 .nav-liens a.actif {
   color: var(--couleur-principale);
   font-weight: bold;
 }
 
-
-/* =============================================
-   LA SECTION HERO
-   ============================================= */
-.hero {
-  min-height: 90vh; /* Prend au minimum 90% de la hauteur de l'écran */
-  display: flex;
-  flex-direction: column;  /* Les éléments s'empilent verticalement */
-  justify-content: center; /* Centré verticalement */
-  padding: 0 60px;         /* Espacement sur les côtés */
-}
-
-.hero-bonjour {
-  font-family: var(--police-texte);
-  font-size: 1.1rem;
-  color: var(--couleur-gris);
-  margin-bottom: 10px;
-}
-
-.hero-nom {
-  font-family: var(--police-titre);
-  font-size: 4rem;      /* Très grand pour être impactant */
-  color: var(--couleur-texte);
-  margin-bottom: 10px;
-  line-height: 1.1;
-}
-
-.hero-metier {
-  font-size: 1.8rem;
-  color: var(--couleur-principale); /* En rouge */
-  margin-bottom: 20px;
-  font-weight: normal;
-}
-
-.hero-description {
-  font-size: 1.1rem;
-  color: var(--couleur-gris);
-  max-width: 550px; /* Limite la largeur pour rester lisible */
-  margin-bottom: 40px;
-}
-
-/* Conteneur des boutons */
-.hero-boutons {
-  display: flex;
-  gap: 20px; /* Espace entre les deux boutons */
-}
-
-/* Style commun aux deux boutons */
-.btn {
-  padding: 14px 32px;
-  border-radius: 4px;
-  font-size: 1rem;
-  font-weight: bold;
-  text-decoration: none;
-  transition: all 0.3s; /* Animation douce au survol */
-  cursor: pointer;
-}
-
-/* Bouton principal : fond rouge */
-.btn-principal {
-  background-color: var(--couleur-principale);
-  color: #fff;
-  border: 2px solid var(--couleur-principale);
-}
-
-.btn-principal:hover {
-  background-color: transparent; /* Fond transparent au survol */
-  color: var(--couleur-principale);
-}
-
-/* Bouton secondaire : transparent avec bordure */
-.btn-secondaire {
-  background-color: transparent;
-  color: var(--couleur-texte);
-  border: 2px solid #444;
-}
-
-.btn-secondaire:hover {
-  border-color: var(--couleur-principale);
-  color: var(--couleur-principale);
-}
-
-
-/* =============================================
-   LE FOOTER
-   ============================================= */
-footer {
-  text-align: center;  /* Texte centré */
-  padding: 30px;
-  color: var(--couleur-gris);
-  font-size: 0.85rem;
-  border-top: 1px solid #1f1f1f; /* Ligne de séparation subtile */
-}
+/* Styles pour l'en-tête de page */
 .page-entete {
   padding: 80px 60px 40px;
-  /* 80px en haut, 60px sur les côtés, 40px en bas */
 }
 
 .label-rouge {
-  /* Le petit texte rouge au dessus du titre */
   color: var(--couleur-principale);
   font-size: 0.9rem;
-  letter-spacing: 0.15em; /* Espace entre les lettres */
-  text-transform: uppercase; /* Tout en majuscules */
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
   margin-bottom: 10px;
 }
 
@@ -183,137 +92,138 @@ footer {
 }
 
 .ligne-rouge {
-  /* La petite ligne décorative rouge sous le titre */
   width: 60px;
   height: 3px;
   background-color: var(--couleur-principale);
-  /* Pas de contenu, juste un bloc coloré */
 }
 
+/* Styles pour le pied de page */
+footer {
+  text-align: center;
+  padding: 30px;
+  color: var(--couleur-gris);
+  font-size: 0.85rem;
+  border-top: 1px solid #1f1f1f;
+}
 
-/* =============================================
-   LA GRILLE À PROPOS
-   Deux colonnes côte à côte grâce à CSS Grid
-   ============================================= */
+/* Styles pour la grille de la section À propos */
 .apropos-grille {
   display: grid;
-  /* On crée 2 colonnes : 
-     - La première fait 350px de large (la photo)
-     - La deuxième prend tout l'espace restant (1fr)
-  */
-  grid-template-columns: 350px 1fr;
-  gap: 80px;       /* Espace entre les deux colonnes */
+  grid-template-columns: 300px 1fr;
+  gap: 60px;
   padding: 0 60px 100px;
-  align-items: start; /* Aligne en haut, pas en milieu */
+  align-items: start;
 }
 
-
-/* =============================================
-   COLONNE GAUCHE : L'AVATAR
-   ============================================= */
+/* Styles pour la partie gauche de la grille (avatar et infos) */
 .apropos-gauche {
   display: flex;
-  flex-direction: column; /* Empile les éléments verticalement */
-  align-items: center;    /* Centre horizontalement */
-  gap: 20px;
-}
-
-.image {
-  /* Le cercle avec les initiales */
-  width: 200px;
-  height: 200px;
-  border-radius:;    /* Rend le carré en cercle */
-  background-color: var(--couleur-carte);
-  border: 3px solid var(--couleur-principale); /* Bordure rouge */
-  display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: right; /* Centre les initiales dans le cercle */
+  gap: 25px;
+  width: 300px;
 }
 
-.image-initiales {
-  font-size: 3.5rem;
-  font-family: var(--police-titre);
-  color: var(--couleur-principale);
-  font-weight: bold;
-}
-
-.image-infos {
-  /* La petite carte d'identité sous l'avatar */
-  background-color: var(--couleur-carte);
-  border: 1px solid #2a2a2a;
-  border-radius: 50px;
-  padding: 20px;
-  width: 80%; /* Prend toute la largeur de la colonne */
-}
-
-.info-ligne {
-  /* Chaque ligne de la carte d'identité */
-  display: flex;
-  justify-content: space-between; /* Label à gauche, valeur à droite */
-  padding: 10px 0;
-  border-bottom: 1px solid #2a2a2a; /* Séparateur entre chaque ligne */
-  font-size: 0.9rem;
-}
-
-/* Supprime le séparateur de la dernière ligne */
-.info-ligne:last-child {
-  border-bottom: none;
-}
-
-.info-label {
-  color: var(--couleur-gris); /* Gris pour le label */
-}
-
-.info-valeur {
-  color: var(--couleur-texte); /* Blanc pour la valeur */
-  font-weight: 600;
-}
-
-.disponible {
-  /* Le mot "Disponible" s'affiche en vert */
-  color: #4ADE80 !important;
-  /* !important force cette couleur même si une autre règle 
-     essaie de la changer */
-}
-
-
-/* =============================================
-   COLONNE DROITE : BIOGRAPHIE
-   ============================================= */
-.apropos-droite p {
-  color: var(--couleur-gris);
-  font-size: 1.05rem;
-  margin-bottom: 20px; /* Espace entre chaque paragraphe */
-}
-
+/* Styles pour les sous-titres */
 .sous-titre {
-  /* Les titres h2 dans la colonne de droite */
   font-family: var(--police-titre);
   font-size: 1.6rem;
   color: var(--couleur-texte);
   margin-bottom: 25px;
   padding-bottom: 10px;
-  border-bottom: 1px solid #2a2a2a; /* Ligne de séparation subtile */
+  border-bottom: 1px solid #2a2a2a;
 }
 
+/* Styles pour l'avatar */
+.avatar {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 3px solid var(--couleur-principale);
+}
 
-/* =============================================
-   LA TIMELINE (frise chronologique)
-   ============================================= */
+.avatar-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Styles pour la carte d'informations personnelles */
+.avatar-infos {
+  background-color: var(--couleur-carte);
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  padding: 20px;
+  width: 100%;
+}
+
+.info-ligne {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #2a2a2a;
+  font-size: 0.9rem;
+}
+
+.info-ligne:last-child {
+  border-bottom: none;
+}
+
+.info-label {
+  color: var(--couleur-gris);
+}
+
+.info-valeur {
+  color: var(--couleur-texte);
+  font-weight: 600;
+}
+
+.disponible {
+  color: #4ADE80 !important;
+}
+
+/* Styles pour la partie droite de la grille (biographie et timeline) */
+.apropos-droite {
+  color: var(--couleur-gris);
+  font-size: 1.05rem;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-left: 20px;
+}
+
+.apropos-droite h2 {
+  margin-top: 0;
+  font-family: var(--police-titre);
+  font-size: 1.6rem;
+  color: var(--couleur-texte);
+  margin-bottom: 25px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.apropos-droite p {
+  margin-bottom: 20px;
+}
+
+/* Styles pour la timeline du parcours professionnel */
 .timeline {
-  position: relative; /* Nécessaire pour positionner la ligne verticale */
-  padding-left: 30px; /* Espace à gauche pour la ligne */
+  position: relative;
+  padding-left: 30px;
 }
 
-/* La ligne verticale rouge qui traverse toute la timeline */
 .timeline::before {
-  content: '';    /* Un élément vide (juste pour la décoration) */
+  content: '';
   position: absolute;
-  left: 8px;     /* Positionnée à 8px du bord gauche */
+  left: 8px;
   top: 0;
   bottom: 0;
   width: 2px;
-  background-color: #2a2a2a; /* Ligne grise foncée */
+  background-color: #2a2a2a;
 }
 
 .timeline-element {
@@ -324,24 +234,23 @@ footer {
 }
 
 .timeline-point {
-  /* Le petit cercle rouge sur la ligne */
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background-color: var(--couleur-principale); /* Rouge */
-  border: 3px solid var(--couleur-fond);       /* Bord noir pour le détacher */
+  background-color: var(--couleur-principale);
+  border: 3px solid var(--couleur-fond);
   position: absolute;
-  left: -22px; /* Le positionne sur la ligne verticale */
+  left: -22px;
   top: 4px;
-  flex-shrink: 0; /* Empêche le point de rétrécir */
+  flex-shrink: 0;
 }
 
 .timeline-annee {
-  color: var(--couleur-principale); /* En rouge */
+  color: var(--couleur-principale);
   font-size: 0.8rem;
   font-weight: bold;
   letter-spacing: 0.05em;
-  display: block; /* Pour qu'il soit sur sa propre ligne */
+  display: block;
   margin-bottom: 5px;
 }
 
@@ -355,5 +264,3 @@ footer {
   color: var(--couleur-gris);
   font-size: 0.9rem;
 }
-   
-
