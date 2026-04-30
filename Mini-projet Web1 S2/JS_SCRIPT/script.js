@@ -56,3 +56,14 @@ if (btnEnvoyer) {
     succes.style.display = 'flex';
   });
 }
+
+
+// ===== 4. MENU HAMBURGER =====
+const hamburger = document.getElementById('hamburger');
+const navLiens = document.getElementById('nav-liens');
+
+if (hamburger && navLiens) {
+  hamburger.addEventListener('click', function() {
+    navLiens.classList.toggle('active');
+  });
+}

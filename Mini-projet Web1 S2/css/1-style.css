@@ -176,4 +176,106 @@ footer {
   border-top: 1px solid #1f1f1f;
 }
 
+/* Styles pour le menu hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: var(--couleur-texte);
+  margin: 3px 0;
+  transition: 0.3s;
+}
+
+/* Media queries pour responsivité */
+@media (max-width: 768px) {
+  nav {
+    padding: 20px 30px;
+  }
+
+  .nav-liens {
+    gap: 20px;
+  }
+
+  .hero {
+    padding: 0 30px;
+  }
+
+  .hero-nom {
+    font-size: 3rem;
+  }
+
+  .hero-metier {
+    font-size: 1.5rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-liens {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #000;
+    flex-direction: column;
+    gap: 0;
+    padding: 20px 0;
+    border-top: 1px solid var(--couleur-principale);
+  }
+
+  .nav-liens.active {
+    display: flex;
+  }
+
+  .nav-liens li {
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .hero {
+    padding: 0 20px;
+    text-align: center;
+  }
+
+  .hero-nom {
+    font-size: 2.5rem;
+  }
+
+  .hero-metier {
+    font-size: 1.3rem;
+  }
+
+  .hero-description {
+    max-width: none;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
 

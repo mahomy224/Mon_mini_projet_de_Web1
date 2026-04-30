@@ -264,3 +264,95 @@ footer {
   color: var(--couleur-gris);
   font-size: 0.9rem;
 }
+
+/* Styles pour le menu hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: var(--couleur-texte);
+  margin: 3px 0;
+  transition: 0.3s;
+}
+
+/* Media queries pour responsivité */
+@media (max-width: 768px) {
+  nav {
+    padding: 20px 30px;
+  }
+
+  .nav-liens {
+    gap: 20px;
+  }
+
+  .page-entete {
+    padding: 0 30px;
+  }
+
+  .page-titre {
+    font-size: 2.5rem;
+  }
+
+  .apropos-grille {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .timeline {
+    padding: 0 30px;
+  }
+
+  .timeline-item {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-liens {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #000;
+    flex-direction: column;
+    gap: 0;
+    padding: 20px 0;
+    border-top: 1px solid var(--couleur-principale);
+  }
+
+  .nav-liens.active {
+    display: flex;
+  }
+
+  .nav-liens li {
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .page-entete {
+    padding: 0 20px;
+    text-align: center;
+  }
+
+  .page-titre {
+    font-size: 2rem;
+  }
+
+  .apropos-grille {
+    padding: 0 20px;
+  }
+
+  .timeline {
+    padding: 0 20px;
+  }
+}
