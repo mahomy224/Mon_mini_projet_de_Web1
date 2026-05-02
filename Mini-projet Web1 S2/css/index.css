@@ -1,0 +1,281 @@
+/* Variables CSS pour définir les couleurs et polices du site */
+:root {
+  --couleur-fond:      #0c0101;
+  --couleur-principale:#E63946;
+  --couleur-texte:     #F1F1F1;
+  --couleur-gris:      #A0A0A0;
+  --couleur-carte:     #1A1A1A;
+  --police-titre:      'Georgia', serif;
+  --police-texte:      'Arial', sans-serif;
+}
+
+/* Reset des marges et padding pour tous les éléments */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Styles de base pour le corps de la page */
+body {
+  background-color: var(--couleur-fond);
+  color: var(--couleur-texte);
+  font-family: var(--police-texte);
+  line-height: 1.7;
+}
+
+/* Styles pour la barre de navigation */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background-color: #000;
+  border-bottom: 1px solid var(--couleur-principale);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Styles pour le logo de navigation */
+.nav-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--couleur-texte);
+}
+
+.nav-logo span {
+  color: var(--couleur-principale);
+}
+
+/* Styles pour la liste des liens de navigation */
+.nav-liens {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+
+.nav-liens a {
+  color: var(--couleur-gris);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+}
+
+.nav-liens a:hover {
+  color: var(--couleur-texte);
+}
+
+.nav-liens a.actif {
+  color: var(--couleur-principale);
+  font-weight: bold;
+}
+
+.nav-liens a {
+  color: var(--couleur-gris);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+}
+
+.nav-liens a:hover {
+  color: var(--couleur-texte);
+}
+
+.nav-liens a.actif {
+  color: var(--couleur-principale);
+  font-weight: bold;
+}
+
+/* Styles pour la section hero principale */
+.hero {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 60px;
+}
+
+.hero-bonjour {
+  font-family: var(--police-texte);
+  font-size: 1.1rem;
+  color: var(--couleur-principale);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 10px;
+}
+
+.hero-nom {
+  font-family: var(--police-titre);
+  font-size: 4rem;
+  color: var(--couleur-texte);
+  margin-bottom: 10px;
+  line-height: 1.1;
+}
+
+.hero-metier {
+  font-size: 1.8rem;
+  color: var(--couleur-principale);
+  margin-bottom: 20px;
+  font-weight: normal;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  color: var(--couleur-gris);
+  max-width: 550px;
+  margin-bottom: 40px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+/* Styles pour les boutons */
+.btn {
+  padding: 14px 32px;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.btn-principal {
+  background-color: var(--couleur-principale);
+  color: #fff;
+  border: 2px solid var(--couleur-principale);
+}
+
+.btn-principal:hover {
+  background-color: transparent;
+  color: var(--couleur-principale);
+}
+
+.btn-secondaire,
+.btn-outline {
+  background-color: transparent;
+  color: var(--couleur-texte);
+  border: 2px solid #444;
+}
+
+.btn-secondaire:hover,
+.btn-outline:hover {
+  border-color: var(--couleur-principale);
+  color: var(--couleur-principale);
+}
+
+/* Styles pour le pied de page */
+footer {
+  text-align: center;
+  padding: 30px;
+  color: var(--couleur-gris);
+  font-size: 0.85rem;
+  border-top: 1px solid #1f1f1f;
+}
+
+/* Styles pour le menu hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: var(--couleur-texte);
+  margin: 3px 0;
+  transition: 0.3s;
+}
+
+/* Media queries pour responsivité */
+@media (max-width: 768px) {
+  nav {
+    padding: 20px 30px;
+  }
+
+  .nav-liens {
+    gap: 20px;
+  }
+
+  .hero {
+    padding: 0 30px;
+  }
+
+  .hero-nom {
+    font-size: 3rem;
+  }
+
+  .hero-metier {
+    font-size: 1.5rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-liens {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #000;
+    flex-direction: column;
+    gap: 0;
+    padding: 20px 0;
+    border-top: 1px solid var(--couleur-principale);
+  }
+
+  .nav-liens.active {
+    display: flex;
+  }
+
+  .nav-liens li {
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .hero {
+    padding: 0 20px;
+    text-align: center;
+  }
+
+  .hero-nom {
+    font-size: 2.5rem;
+  }
+
+  .hero-metier {
+    font-size: 1.3rem;
+  }
+
+  .hero-description {
+    max-width: none;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+
