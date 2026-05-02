@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Fanta Diaby Sibimé</title>
+  <link rel="stylesheet" href="css/contact.css">
+</head>
+<body>
+  <!-- En-tête : logo + navigation -->
+  <nav>
+    <div class="nav-logo">Fanta<span>.dev</span></div>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul class="nav-liens" id="nav-liens">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="propos.html">À propos</a></li>
+      <li><a href="projet.html">Projets</a></li>
+      <li><a href="competence.html">Compétences</a></li>
+      <li><a href="contact.html" class="actif">Contact</a></li>
+    </ul>
+  </nav>
+  <main>
+    <section class="page-entete">
+      <p class="label-rouge">Travaillons ensemble</p>
+      <h1 class="page-titre">Me Contacter</h1>
+      <div class="ligne-rouge"></div>
+    </section>
+    <section class="contact-grille">
+      <div class="contact-gauche animer">
+        <h2 class="contact-sous-titre">Informations</h2>
+        <p class="contact-intro">Vous avez un projet, une question ou une opportunité ? N'hésitez pas à m'écrire, je réponds sous 24h.</p>
+        <div class="info-contact">
+          <div class="info-icone">📧</div>
+          <div>
+            <p class="info-label">Email</p>
+            <p class="info-valeur">fanta.diaby@dev.gn</p>
+          </div>
+        </div>
+        <div class="info-contact">
+          <div class="info-icone">📍</div>
+          <div>
+            <p class="info-label">Localisation</p>
+            <p class="info-valeur">GUINEE-CONAKRY</p>
+          </div>
+        </div>
+        <div class="info-contact">
+          <div class="info-icone">💼</div>
+          <div>
+            <p class="info-label">LinkedIn</p>
+            <p class="info-valeur">linkedin.com/in/fantadiaby</p>
+          </div>
+        </div>
+        <div class="info-contact">
+          <div class="info-icone">⬡</div>
+          <div>
+            <p class="info-label">GitHub</p>
+            <p class="info-valeur">github.com/fantadiaby</p>
+          </div>
+        </div>
+        <div class="info-contact">
+          <div class="info-icone">🕐</div>
+          <div>
+            <p class="info-label">Disponibilité</p>
+            <p class="info-valeur disponible">Disponible maintenant</p>
+          </div>
+        </div>
+      </div>
+      <div class="contact-droite animer">
+        <div class="formulaire" id="formulaire">
+          <div class="champs-ligne">
+            <div class="champ-groupe">
+              <label for="prenom">Prénom</label>
+              <input type="text" id="prenom" placeholder="Votre prénom" />
+            </div>
+            <div class="champ-groupe">
+              <label for="nom">Nom</label>
+              <input type="text" id="nom" placeholder="Votre nom" />
+            </div>
+          </div>
+          <div class="champ-groupe">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="votre@email.com" />
+          </div>
+          <div class="champ-groupe">
+            <label for="sujet">Sujet</label>
+            <select id="sujet">
+              <option value="">— Choisir un sujet —</option>
+              <option value="projet">Proposition de projet</option>
+              <option value="freelance">Mission freelance</option>
+              <option value="collaboration">Collaboration</option>
+              <option value="autre">Autre</option>
+            </select>
+          </div>
+          <div class="champ-groupe">
+            <label for="message">Message</label>
+            <textarea id="message" rows="6" placeholder="Décrivez votre projet ou votre besoin..."></textarea>
+          </div>
+          <button class="btn btn-principal" id="btn-envoyer">Envoyer le message →</button>
+        </div>
+        <div class="message-succes" id="message-succes">
+          <div class="succes-icone">✓</div>
+          <h3>Message envoyé !</h3>
+          <p>Merci pour votre message. Je vous répondrai sous 24h.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>© 2026 Fanta Diaby Sibimé — Tous droits réservés</p>
+  </footer>
+  <script src="JS_SCRIPT/script.js"></script>
+</body>
+</html>

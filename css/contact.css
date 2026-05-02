@@ -1,0 +1,363 @@
+﻿/* Variables CSS pour définir les couleurs et polices du site */
+:root {
+  --couleur-fond:      #0c0101;
+  --couleur-principale:#E63946;
+  --couleur-texte:     #F1F1F1;
+  --couleur-gris:      #A0A0A0;
+  --couleur-carte:     #1A1A1A;
+  --police-titre:      'Georgia', serif;
+  --police-texte:      'Arial', sans-serif;
+}
+
+/* Reset des marges et padding pour tous les éléments */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Styles de base pour le corps de la page */
+body {
+  background-color: var(--couleur-fond);
+  color: var(--couleur-texte);
+  font-family: var(--police-texte);
+  line-height: 1.7;
+}
+
+/* Styles pour la barre de navigation */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background-color: #000;
+  border-bottom: 1px solid var(--couleur-principale);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Styles pour le logo de navigation */
+.nav-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--couleur-texte);
+}
+
+.nav-logo span {
+  color: var(--couleur-principale);
+}
+
+/* Styles pour la liste des liens de navigation */
+.nav-liens {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+
+.nav-liens a {
+  color: var(--couleur-gris);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+}
+
+.nav-liens a:hover {
+  color: var(--couleur-texte);
+}
+
+.nav-liens a.actif {
+  color: var(--couleur-principale);
+  font-weight: bold;
+}
+
+/* Styles pour l'en-tête de page */
+.page-entete {
+  padding: 80px 60px 40px;
+}
+
+.label-rouge {
+  color: var(--couleur-principale);
+  font-size: 0.9rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.page-titre {
+  font-family: var(--police-titre);
+  font-size: 3rem;
+  color: var(--couleur-texte);
+  margin-bottom: 15px;
+}
+
+.ligne-rouge {
+  width: 60px;
+  height: 3px;
+  background-color: var(--couleur-principale);
+}
+
+/* Styles pour la grille de contact */
+.contact-grille {
+  display: grid;
+  grid-template-columns: 1fr minmax(360px, 420px);
+  gap: 50px;
+  padding: 0 60px 80px;
+}
+
+.contact-gauche,
+.contact-droite {
+  background-color: var(--couleur-carte);
+  border: 1px solid #2a2a2a;
+  border-radius: 12px;
+  padding: 35px;
+}
+
+/* Styles pour les sous-titres de contact */
+.contact-sous-titre {
+  font-family: var(--police-titre);
+  font-size: 1.6rem;
+  color: var(--couleur-texte);
+  margin-bottom: 18px;
+}
+
+/* Styles pour l'introduction de contact */
+.contact-intro {
+  color: var(--couleur-gris);
+  font-size: 1rem;
+  margin-bottom: 25px;
+}
+
+/* Styles pour les informations de contact */
+.info-contact {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 14px 16px;
+  margin-bottom: 22px;
+  align-items: center;
+}
+
+.info-icone {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  font-size: 1.2rem;
+  background-color: #111;
+  border-radius: 12px;
+  color: var(--couleur-principale);
+}
+
+.info-label {
+  color: var(--couleur-gris);
+  font-size: 0.9rem;
+}
+
+.info-valeur {
+  color: var(--couleur-texte);
+  font-weight: 600;
+}
+
+.disponible {
+  color: #4ADE80 !important;
+}
+
+/* Styles pour le formulaire de contact */
+.formulaire {
+  display: grid;
+  gap: 20px;
+}
+
+.champs-ligne {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.champ-groupe {
+  display: grid;
+  gap: 10px;
+}
+
+.champ-groupe label {
+  color: var(--couleur-texte);
+  font-size: 0.95rem;
+}
+
+.champ-groupe input,
+.champ-groupe textarea,
+.champ-groupe select {
+  width: 100%;
+  border: 1px solid #2a2a2a;
+  border-radius: 10px;
+  background-color: #111;
+  color: var(--couleur-texte);
+  padding: 14px 16px;
+  font-size: 0.95rem;
+}
+
+.champ-groupe input:focus,
+.champ-groupe textarea:focus,
+.champ-groupe select:focus {
+  outline: 2px solid var(--couleur-principale);
+}
+
+button#btn-envoyer {
+  width: fit-content;
+  padding: 14px 30px;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--couleur-principale);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.25s, opacity 0.25s;
+}
+
+button#btn-envoyer:hover {
+  transform: translateY(-2px);
+  opacity: 0.95;
+}
+
+/* Styles pour le message de succès */
+.message-succes {
+  display: none;
+  background-color: #111;
+  border: 1px solid #2a2a2a;
+  border-radius: 12px;
+  padding: 35px;
+  color: var(--couleur-texte);
+}
+
+.succes-icone {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 20px;
+  font-size: 1.6rem;
+  color: var(--couleur-principale);
+}
+
+.message-succes h3 {
+  margin-bottom: 10px;
+  font-size: 1.25rem;
+}
+
+.message-succes p {
+  color: var(--couleur-gris);
+}
+
+/* Styles pour le pied de page */
+footer {
+  text-align: center;
+  padding: 30px;
+  color: var(--couleur-gris);
+  font-size: 0.85rem;
+  border-top: 1px solid #1f1f1f;
+}
+
+/* Styles pour le menu hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: var(--couleur-texte);
+  margin: 3px 0;
+  transition: 0.3s;
+}
+
+/* Media queries pour responsivité */
+@media (max-width: 768px) {
+  nav {
+    padding: 20px 30px;
+  }
+
+  .nav-liens {
+    gap: 20px;
+  }
+
+  .page-entete {
+    padding: 0 30px;
+  }
+
+  .page-titre {
+    font-size: 2.5rem;
+  }
+
+  .contact-section {
+    padding: 0 30px;
+  }
+
+  .contact-grille {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .formulaire {
+    max-width: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-liens {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #000;
+    flex-direction: column;
+    gap: 0;
+    padding: 20px 0;
+    border-top: 1px solid var(--couleur-principale);
+  }
+
+  .nav-liens.active {
+    display: flex;
+  }
+
+  .nav-liens li {
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .page-entete {
+    padding: 0 20px;
+    text-align: center;
+  }
+
+  .page-titre {
+    font-size: 2rem;
+  }
+
+  .contact-section {
+    padding: 0 20px;
+  }
+
+  .contact-grille {
+    gap: 20px;
+  }
+
+  .formulaire {
+    padding: 25px;
+  }
+
+  .form-groupe {
+    margin-bottom: 20px;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}

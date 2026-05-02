@@ -1,0 +1,331 @@
+﻿/* Variables CSS pour définir les couleurs et polices du site */
+:root {
+  --couleur-fond:      #0c0101;
+  --couleur-principale:#E63946;
+  --couleur-texte:     #F1F1F1;
+  --couleur-gris:      #A0A0A0;
+  --couleur-carte:     #1A1A1A;
+  --police-titre:      'Georgia', serif;
+  --police-texte:      'Arial', sans-serif;
+}
+
+/* Reset des marges et padding pour tous les éléments */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Styles de base pour le corps de la page */
+body {
+  background-color: var(--couleur-fond);
+  color: var(--couleur-texte);
+  font-family: var(--police-texte);
+  line-height: 1.7;
+}
+
+/* Styles pour la barre de navigation */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background-color: #000;
+  border-bottom: 1px solid var(--couleur-principale);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Styles pour le logo de navigation */
+.nav-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--couleur-texte);
+}
+
+.nav-logo span {
+  color: var(--couleur-principale);
+}
+
+/* Styles pour la liste des liens de navigation */
+.nav-liens {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+
+.nav-liens a {
+  color: var(--couleur-gris);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+}
+
+.nav-liens a:hover {
+  color: var(--couleur-texte);
+}
+
+.nav-liens a.actif {
+  color: var(--couleur-principale);
+  font-weight: bold;
+}
+
+/* Styles pour l'en-tête de page */
+.page-entete {
+  padding: 80px 60px 40px;
+}
+
+.label-rouge {
+  color: var(--couleur-principale);
+  font-size: 0.9rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.page-titre {
+  font-family: var(--police-titre);
+  font-size: 3rem;
+  color: var(--couleur-texte);
+  margin-bottom: 15px;
+}
+
+.ligne-rouge {
+  width: 60px;
+  height: 3px;
+  background-color: var(--couleur-principale);
+}
+
+/* Styles pour le pied de page */
+footer {
+  text-align: center;
+  padding: 30px;
+  color: var(--couleur-gris);
+  font-size: 0.85rem;
+  border-top: 1px solid #1f1f1f;
+}
+
+/* Styles pour les sections de compétences */
+.comp-section {
+  padding: 0 60px 70px;
+}
+
+.comp-titre {
+  font-family: var(--police-titre);
+  font-size: 1.6rem;
+  color: var(--couleur-texte);
+  margin-bottom: 35px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+/* Styles pour les barres de compétences */
+.barres {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  max-width: 700px;
+}
+
+.barre-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.barre-nom {
+  color: var(--couleur-texte);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.barre-pct {
+  color: var(--couleur-principale);
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.barre-fond {
+  width: 100%;
+  height: 8px;
+  background-color: #2a2a2a;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.barre-remplissage {
+  height: 100%;
+  width: 0;
+  background-color: var(--couleur-principale);
+  border-radius: 999px;
+  transition: width 1.2s ease;
+}
+
+/* Styles pour la grille des badges */
+.badges-grille {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.badge {
+  background-color: var(--couleur-carte);
+  border: 1px solid #2a2a2a;
+  color: var(--couleur-texte);
+  font-size: 0.9rem;
+  padding: 8px 18px;
+  border-radius: 6px;
+  transition: border-color 0.3s, color 0.3s;
+  cursor: default;
+}
+
+.badge:hover {
+  border-color: var(--couleur-principale);
+  color: var(--couleur-principale);
+}
+
+/* Styles pour la grille des certifications */
+.certifs-grille {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.certif-carte {
+  background-color: var(--couleur-carte);
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+.certif-carte:hover {
+  border-color: var(--couleur-principale);
+  transform: translateY(-4px);
+}
+
+.certif-icone {
+  font-size: 2.2rem;
+  flex-shrink: 0;
+}
+
+.certif-titre {
+  color: var(--couleur-texte);
+  font-size: 0.95rem;
+  margin-bottom: 5px;
+}
+
+.certif-organisme {
+  color: var(--couleur-gris);
+  font-size: 0.85rem;
+  margin-bottom: 8px;
+}
+
+.certif-annee {
+  background-color: #2a2a2a;
+  color: var(--couleur-principale);
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+/* Styles pour le menu hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: var(--couleur-texte);
+  margin: 3px 0;
+  transition: 0.3s;
+}
+
+/* Media queries pour responsivité */
+@media (max-width: 768px) {
+  nav {
+    padding: 20px 30px;
+  }
+
+  .nav-liens {
+    gap: 20px;
+  }
+
+  .page-entete {
+    padding: 0 30px;
+  }
+
+  .page-titre {
+    font-size: 2.5rem;
+  }
+
+  .competences-section {
+    padding: 0 30px;
+  }
+
+  .competences-grille {
+    grid-template-columns: 1fr;
+  }
+
+  .certifs-grille {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-liens {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #000;
+    flex-direction: column;
+    gap: 0;
+    padding: 20px 0;
+    border-top: 1px solid var(--couleur-principale);
+  }
+
+  .nav-liens.active {
+    display: flex;
+  }
+
+  .nav-liens li {
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .page-entete {
+    padding: 0 20px;
+    text-align: center;
+  }
+
+  .page-titre {
+    font-size: 2rem;
+  }
+
+  .competences-section {
+    padding: 0 20px;
+  }
+
+  .certifs-grille {
+    gap: 15px;
+  }
+
+  .certif-carte {
+    padding: 20px;
+    gap: 15px;
+  }
+}
